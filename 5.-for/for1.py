@@ -1,5 +1,5 @@
 
-print("1 ----------------------------")
+print("///////////////////////////////////          1           ////////////////////////////////////////////////")
 
 print("cadena")
 
@@ -24,3 +24,13 @@ diccionario = {'nombre' : 'Carlos', 'edad' : 22, 'cursos': ['Python','Django','J
 
 for key in diccionario:
     print ("    ", key, ": ", diccionario[key])
+
+print("/////////////////////////////////////////          2          ////////////////////////////////////////////////")
+
+
+cadena = input("Introduce una cadena: ")
+
+for letra in range(len(cadena)):
+    cadenaNueva = ""
+    cadenaNueva += cadena[letra].upper()
+print(cadenaNueva)
