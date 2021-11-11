@@ -1,3 +1,5 @@
+import math
+
 
 print("///////////////////////////////////          1           ////////////////////////////////////////////////")
 
@@ -25,12 +27,20 @@ diccionario = {'nombre' : 'Carlos', 'edad' : 22, 'cursos': ['Python','Django','J
 for key in diccionario:
     print ("    ", key, ": ", diccionario[key])
 
-print("/////////////////////////////////////////          2          ////////////////////////////////////////////////")
 
 
 cadena = input("Introduce una cadena: ")
-
+cadenaNueva = ""
 for letra in range(len(cadena)):
-    cadenaNueva = ""
     cadenaNueva += cadena[letra].upper()
-print(cadenaNueva)
+print("    " + cadenaNueva)
+
+print("/////////////////////////////////////////          3          ////////////////////////////////////////////////")
+
+listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+
+for num in listaNumeros:
+    if (num % 2) == 0:
+        print(num**2)
+    else:
+        print(math.sqrt(num))
