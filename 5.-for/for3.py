@@ -1,4 +1,5 @@
 #Crea una lista aleatoria de n elementos
+from itertools import count
 import random as rm
 #seed fija una semilla de esta forma siempre salen los mismo números.
 rm.seed(2021)
@@ -11,6 +12,8 @@ lista=rm.choices(lista,k=100)
 
 menor = lista[0]
 mayor = lista[0]
+menosrepetido = 0
+masrepetido = 0
 acumulador = 0 
 for i in range(len(lista)):
     
@@ -22,8 +25,17 @@ for i in range(len(lista)):
 
     acumulador += lista[i]
 
+    for j in range(len(lista)):
+        if lista.count(lista[i]) > lista.count(lista[j]):
+            masrepetido = lista[i]
+        
+        if lista.count(lista[i]) < lista.count(lista[j]):
+            menosrepetido = lista[i]
+
 media = acumulador / len(lista)
 
 print(menor)
 print(mayor)
 print(media)
+print(menosrepetido)
+print(masrepetido)
