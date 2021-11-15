@@ -9,4 +9,21 @@ lista=list(range(1000))
 #Sample extrae un elemento al azar de objeto iterable,el segundo parametro es el numero de veces lo hacemos 
 lista=rm.choices(lista,k=100)
 
+menor = lista[0]
+mayor = lista[0]
+acumulador = 0 
+for i in range(len(lista)):
+    
+    if menor > lista[i]:
+        menor = lista[i]
+    
+    if mayor < lista[i]:
+        mayor = lista[i]
 
+    acumulador += lista[i]
+
+media = acumulador / len(lista)
+
+print(menor)
+print(mayor)
+print(media)
