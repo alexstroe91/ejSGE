@@ -23,9 +23,9 @@ resultado = ""
 for j in range(len(frase)):
 
     if (ord(frase[j]) + desplazamiento) > 122:
-        resultado += str.lower(chr(ord(frase[j]) + desplazamiento - 26) )
+        resultado += (chr(ord(frase[j]) + desplazamiento - 26) )
     else:
-        resultado += str.lower(chr(ord(frase[j]) + desplazamiento))
+        resultado += (chr(ord(frase[j]) + desplazamiento))
         
 
 print(resultado)
