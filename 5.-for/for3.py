@@ -15,16 +15,22 @@ mayor = lista[0]
 menosrepetido = 0
 masrepetido = 0
 acumulador = 0 
+#con un for recorro toda la lista
 for i in range(len(lista)):
-    
+    #con este if se compara numero a numero si el numero menor es mayor al nr comprobado en ese instante
+    #y si es asi, el numero menor pasa a ser el nr comprobado en ese instante
     if menor > lista[i]:
         menor = lista[i]
-    
+
+    #con este if se compara numero a numero si el numero mayor es menor al nr comprobado en ese instante
+    #y si es asi, el numero mayor pasa a ser el nr comprobado en ese instante
     if mayor < lista[i]:
         mayor = lista[i]
 
+    #aqui acumulo todos los numeros en una variable para despues dividirlos entre el len(lista) y sacar la media
     acumulador += lista[i]
 
+    #aqui cuento cada elemento de la lista y guardo si es el mas repetido o el menos
     for j in range(len(lista)):
         if lista.count(lista[i]) > lista.count(lista[j]):
             masrepetido = lista[i]
