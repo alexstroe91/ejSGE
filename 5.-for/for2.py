@@ -26,6 +26,5 @@ for j in range(len(frase)):
         resultado += (chr(ord(frase[j]) + desplazamiento - 26) )
     else:
         resultado += (chr(ord(frase[j]) + desplazamiento))
-        
 
 print(resultado)
