@@ -1,3 +1,16 @@
+def sumar(op1, op2):
+    print("{0} + {1} = {2}".format(op1, op2, op1 + op2))
+
+def restar(op1, op2):
+    print("{0} - {1} = {2}".format(op1, op2, op1 - op2))
+
+def multiplicar(op1, op2):
+    print("{0} * {1} = {2}".format(op1, op2, op1 * op2))
+
+def dividir(op1, op2):
+    print("{0} / {1} = {2}".format(op1, op2, op1 / op2))
+
+
 respuesta = "s"
 
 while respuesta != "n":
@@ -12,13 +25,13 @@ while respuesta != "n":
     num2 = int(input("Introduce el segundo numero: "))
 
     if opcion == 1:
-        print("{0} + {1} = {2}".format(num1, num2, num1 + num2))
+        sumar(num1,num2)
     elif opcion == 2:
-        print("{0} - {1} = {2}".format(num1, num2, num1 - num2))
+        restar(num1, num2)
     elif opcion == 3:
-        print("{0} * {1} = {2}".format(num1, num2, num1 * num2))
+        multiplicar(num1, num2)
     elif opcion == 4:
-        print("{0} / {1} = {2}".format(num1, num2, num1 / num2))
+        dividir(num1, num2)
 
     respuesta = input("Quiere seguir? (s/n): ")
 
