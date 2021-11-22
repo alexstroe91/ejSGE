@@ -11,3 +11,5 @@ lista = listaaleatoria(1000)
 print(lista[:10])
     
 print(lista[-10:])
+
+print(lista[50:86])
