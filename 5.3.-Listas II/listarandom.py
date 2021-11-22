@@ -13,3 +13,5 @@ print(lista[:10])
 print(lista[-10:])
 
 print(lista[50:86])
+
+print(lista[:100:2])
