@@ -8,7 +8,6 @@ def listaaleatoria(tamano):
 
 lista = listaaleatoria(1000)
 
-for i in range(len(lista[:10])):
-    print(lista[i])
+print(lista[:10])
     
 print(lista[-10:])
