@@ -1,14 +1,21 @@
+import os
+
+
 continuar = "s"
 listaUsuarios = []
 id = 1
 
+
+
 #muestra las opciones del menu
 def menu ():
+    os.system("cls")
     print("1.- Añadir usuario")
     print("2.- Mostrar todos los usuarios")
     print("3.- Modificar usuarios dado un ID")
     print("4.- Borrar usuario dado un ID")
     print("5.- Mostrar solo las fechas")
+    input("Pulsa ENTER para continuar")
     
 #pide los datos del usuario y lo añade a la lista
 def añadirUser(id):
@@ -19,11 +26,13 @@ def añadirUser(id):
     rol = input("Rol del usuario: [usuario, usuario avanzado, admin]: ")
         
     listaUsuarios.append([id, [diaFecha, mesFecha, añoFecha], rol])
+    input("Pulsa ENTER para continuar")
     
 #recorre la lista y muestra todos los usuarios
 def mostrarUsuarios():
     for user in listaUsuarios:
         print(user)
+    input("Pulsa ENTER para continuar")
 
 #pide un ID y le da la opcion de modificar la fecha o el rol
 def modificarUsuarios():
@@ -31,6 +40,7 @@ def modificarUsuarios():
     
     for user in listaUsuarios:
         if user[0] == buscarID:
+            idUsuarioLista = user[0] - 1
             print("Ha elegido modificar el usuario : {0}".format(user[0]))
             print("0.- Nada")
             print("1.- Modificar fecha")
@@ -45,39 +55,40 @@ def modificarUsuarios():
                 mesFecha = int(input("Introduce el mes: "))
                 añoFecha = int(input("Introduce el año: "))
                 
-                listaUsuarios[user][1][0] = diaFecha
-                listaUsuarios[user][1][1] = mesFecha
-                listaUsuarios[user][1][2] = añoFecha
+                listaUsuarios[idUsuarioLista][1][0] = diaFecha
+                listaUsuarios[idUsuarioLista][1][1] = mesFecha
+                listaUsuarios[idUsuarioLista][1][2] = añoFecha
                 
-                print("Fecha nueva: {0}".format(listaUsuarios[user][1]))
+                print("Fecha nueva: {0}".format(listaUsuarios[idUsuarioLista][1]))
                 
                 print("**** CLIENTE MODIFICADO CON ÉXITO ***")
             
             elif modificar == 2:
                 rol = input("Introduce el rol: ")
-                listaUsuarios[user][2] = rol
+                listaUsuarios[idUsuarioLista][2] = rol
                 
-                print("Rol nuevo: {}".format(listaUsuarios[user][2]))
+                print("Rol nuevo: {}".format(listaUsuarios[idUsuarioLista][2]))
                 
-                print("**** CLIENTE MODIFICADO CON ÉXITO ***")
+                print("**** CLIENTE MODIFICADO CON ÉXITO ***")  
+                
+    input("Pulsa ENTER para continuar")
                 
                 
-                
-                
-            
-
 while continuar == "s":
+    
     menu()
     opcion = int(input("Elige una opcion: "))
     if opcion == 1:
         añadirUser(id)
-        id += 1
+        id += 1        
     
     if opcion == 2:
         mostrarUsuarios()
+        input("Pulsa ENTER para continuar")
         
     if opcion == 3:
         modificarUsuarios()    
+        input("Pulsa ENTER para continuar")
     
 print(listaUsuarios)
     
