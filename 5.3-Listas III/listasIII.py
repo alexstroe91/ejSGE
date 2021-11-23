@@ -15,7 +15,6 @@ def menu ():
     print("3.- Modificar usuarios dado un ID")
     print("4.- Borrar usuario dado un ID")
     print("5.- Mostrar solo las fechas")
-    input("Pulsa ENTER para continuar")
     
 #pide los datos del usuario y lo añade a la lista
 def añadirUser(id):
@@ -72,7 +71,16 @@ def modificarUsuarios():
                 print("**** CLIENTE MODIFICADO CON ÉXITO ***")  
                 
     input("Pulsa ENTER para continuar")
-                
+             
+             
+def borrarUsuario():
+    buscarID = int(input("Introduce el ID a buscar: "))
+    for user in listaUsuarios:
+        if user[0] == buscarID:
+            idUsuarioLista = user[0] - 1
+            confirmacion = int(input("Seguro que quieres borrarlo? [1.-SI / 2.-NO] : "))
+            if confirmacion == 1:
+                listaUsuarios.pop[idUsuarioLista]
                 
 while continuar == "s":
     
@@ -84,11 +92,12 @@ while continuar == "s":
     
     if opcion == 2:
         mostrarUsuarios()
-        input("Pulsa ENTER para continuar")
         
     if opcion == 3:
-        modificarUsuarios()    
-        input("Pulsa ENTER para continuar")
+        modificarUsuarios()   
+        
+    if opcion == 4:
+         
     
 print(listaUsuarios)
     
