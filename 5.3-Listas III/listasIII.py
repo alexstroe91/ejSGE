@@ -18,7 +18,9 @@ def añadirUser(id):
         
     listaUsuarios.append([id, [diaFecha, mesFecha, añoFecha], rol])
     
-
+def mostrarUsuarios():
+    for user in listaUsuarios:
+        print(user)
 
 while continuar == "s":
     menu()
@@ -27,5 +29,8 @@ while continuar == "s":
         añadirUser(id)
         id += 1
     
+    if opcion == 2:
+        mostrarUsuarios()
+        
 print(listaUsuarios)
     
