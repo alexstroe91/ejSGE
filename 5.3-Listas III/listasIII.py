@@ -10,6 +10,7 @@ id = 1
 #muestra las opciones del menu
 def menu ():
     os.system("cls")
+    print("0.- Salir")
     print("1.- Añadir usuario")
     print("2.- Mostrar todos los usuarios")
     print("3.- Modificar usuarios dado un ID")
@@ -72,20 +73,32 @@ def modificarUsuarios():
                 
     input("Pulsa ENTER para continuar")
              
-             
+#pide un ID, lo busca y si lo encuentra, con confiramación, lo borra de la lista.  
 def borrarUsuario():
     buscarID = int(input("Introduce el ID a buscar: "))
     for user in listaUsuarios:
         if user[0] == buscarID:
-            idUsuarioLista = user[0] - 1
+            posUsuarioLista = user[0] - 1
             confirmacion = int(input("Seguro que quieres borrarlo? [1.-SI / 2.-NO] : "))
             if confirmacion == 1:
-                listaUsuarios.pop[idUsuarioLista]
+                listaUsuarios.pop()[posUsuarioLista]
+    
+    input("Pulsa ENTER para continuar")
                 
-while continuar == "s":
+#muestra solo las fechas de ingreso de los usuarios
+def mostrarSoloFechas():
+    for user in listaUsuarios:
+        print(user[1])
+    
+    input("Pulsa ENTER para continuar")
+                
+while continuar != 1:
     
     menu()
     opcion = int(input("Elige una opcion: "))
+    if opcion == 0:
+        continuar = int(input("Quieres salir? [1-SI / 2-NO]: "))        
+    
     if opcion == 1:
         añadirUser(id)
         id += 1        
@@ -97,7 +110,11 @@ while continuar == "s":
         modificarUsuarios()   
         
     if opcion == 4:
+         borrarUsuario()
          
+    if opcion == 5:
+        mostrarSoloFechas()
+        
     
 print(listaUsuarios)
     
