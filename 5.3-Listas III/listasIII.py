@@ -76,8 +76,11 @@ def modificarUsuarios():
 #pide un ID, lo busca y si lo encuentra, con confiramación, lo borra de la lista.  
 def borrarUsuario():
     buscarID = int(input("Introduce el ID a buscar: "))
+    #por cada usuario en la lista
     for user in listaUsuarios:
+        #comprueba si el id del usuario es igual al id que se ha introducido por el teclado
         if user[0] == buscarID:
+            #sacamos la posicion de ese usuario en la lista que seria el ID - 1
             posUsuarioLista = user[0] - 1
             confirmacion = int(input("Seguro que quieres borrarlo? [1.-SI / 2.-NO] : "))
             if confirmacion == 1:
@@ -87,11 +90,13 @@ def borrarUsuario():
                 
 #muestra solo las fechas de ingreso de los usuarios
 def mostrarSoloFechas():
+    #por cada usuario en la lista de usuarios, muestra el element 1 que es la fecha
     for user in listaUsuarios:
         print(user[1])
     
     input("Pulsa ENTER para continuar")
                 
+#comienzo del bucle principal
 while continuar != 1:
     
     menu()
