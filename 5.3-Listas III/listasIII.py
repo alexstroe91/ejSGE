@@ -1,11 +1,8 @@
 import os
 
-
 continuar = "s"
 listaUsuarios = []
 id = 1
-
-
 
 #muestra las opciones del menu
 def menu ():
