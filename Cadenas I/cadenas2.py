@@ -29,7 +29,6 @@ Estando en esto, llegó acaso a la venta un castrador de puercos, y así como 
 Capítulo 3: Donde se cuenta la graciosa manera que tuvo D. Quijote en armarse caballero'''
 
 lista = string.split(" ")
-print(lista)
 
 print("Total palabras: ",len(lista))
 
