@@ -1,6 +1,16 @@
 import random
 import math 
 
+def mostrarLineas():
+    numeroLineas = int(input("Introduce el numero de lineas que quieres mostrar: "))
+    
+    f = open("fichero.txt", "r")
+    for i in range(numeroLineas):
+        print(f.readline())
+
+    f.close()  
+        
+
 listaNumeros = []
 
 for i in range(1000):
@@ -18,7 +28,4 @@ for i in listaNumeros:
 
 f.close()
 
-f = open("fichero.txt", "r")
-print(f.read())
-
-f.close()    
+mostrarLineas()
