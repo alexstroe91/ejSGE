@@ -22,10 +22,12 @@ listaLineas = []
 def volcadoALista():
     f = open("fichero.txt", "r")
         
-    for i in f:
+    for i in range(contarlineas()):
         listaLineas.append(f.readline())
 
     
+
+volcadoALista()
 
 print("1.- Mostrar cabecera")
 print("2.- Mostrar pie")
@@ -72,6 +74,12 @@ elif opcion == 3:
     f.close()
     
 elif opcion == 4:
+    lineas = int(input("Cuantas lineas quieres borrar: "))
     
+    print(len(listaLineas))
+    for i in range(lineas):
+        listaLineas.pop(i)
+    
+    print(len(listaLineas))
         
     
