@@ -16,6 +16,15 @@ def contarlineas():
     
     f.close()
     return cont
+
+listaLineas = []
+
+def volcadoALista():
+    f = open("fichero.txt", "r")
+        
+    for i in f:
+        listaLineas.append(f.readline())
+
     
 
 print("1.- Mostrar cabecera")
@@ -62,6 +71,7 @@ elif opcion == 3:
         
     f.close()
     
-
+elif opcion == 4:
+    
         
     
