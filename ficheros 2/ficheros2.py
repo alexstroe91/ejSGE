@@ -15,9 +15,8 @@ def contarlineas():
         cont += 1
     
     f.close()
+    return cont
     
-
-
 
 print("1.- Mostrar cabecera")
 print("2.- Mostrar pie")
@@ -32,6 +31,22 @@ if opcion == 1:
 elif opcion == 2:
     lineas = int(input("Cuantas lineas quieres leer: "))
     
+    lineasALeer = contarlineas() - lineas + 1
+    
+    contador = 1
+    texto = " "
+    
+    f = open("fichero.txt", "r")
+    
+    for i in range(contarlineas()):
+        while texto != "":
+            
+            texto = f.readline()
+            if contador >= lineasALeer:
+                print(texto)
+            contador += 1
+            
+    
 elif opcion == 3:
     
     f = open ("fichero.txt", "a")
@@ -39,12 +54,14 @@ elif opcion == 3:
     for i in range(10):
         
         numero = int(input("Introduce el numero: " + str(i+1) + ": "))
-        cuadrado = i ** 2
-        raiz = math.sqrt(i)
-        cubo = i ** 3
+        cuadrado = numero ** 2
+        raiz = math.sqrt(numero)
+        cubo = numero ** 3
         
-        f.write("numero={}#cuadrado={}#raiz={}#cubo={}\n".format(i, round(cuadrado, 2), round(raiz,2), round(cubo,2)))
+        f.write("numero={}#cuadrado={}#raiz={}#cubo={}\n".format(numero, round(cuadrado, 2), round(raiz,2), round(cubo,2)))
         
     f.close()
+    
+
         
     
