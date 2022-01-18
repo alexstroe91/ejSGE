@@ -10,4 +10,5 @@ with open("liga.csv") as fich:
     
 partidos.pop(0)
     
-
+for partido in partidos:
+    resultados.append(partido[2].split("-"))
