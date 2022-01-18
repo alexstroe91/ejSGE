@@ -21,3 +21,10 @@ for resultado in resultados:
         victoriasLocal += 1
     elif resultado[0] < resultado[1]:
         victoriasVisitante += 1
+
+if victoriasLocal > victoriasVisitante:
+    print("Han ganado mas los equipos locales")
+elif victoriasLocal < victoriasVisitante:
+    print("Han ganado mas los equipos visitantes")
+else:
+    print("Han ganado los mismos partidos")
