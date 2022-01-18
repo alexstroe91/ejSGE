@@ -24,7 +24,7 @@ for partido in partidos:
     
     totalPartidos += 1
     
-mediaEspectadores = totalEspectadores / (totalPartidos - 1)
+mediaEspectadores = totalEspectadores / totalPartidos
     
 victoriasLocal = 0
 victoriasVisitante = 0
