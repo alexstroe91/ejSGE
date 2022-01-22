@@ -15,7 +15,7 @@ def menu():
 def crearTicket():
     coche = []
     matricula = input("Matricula: ")
-    horaEntrada = input("Hora y minuto ENTRADA: ")
+    horaEntrada = (input("Hora ENTRADA: "))    
     estado = "Dentro"
     coche.append(matricula)
     coche.append(horaEntrada)
@@ -30,10 +30,20 @@ def cerrarTicket():
     for ticket in listaCoches:
         if ticket[0] == buscarMatricula:
             encontrado = True
-            horaSalida = input("Hora y minuto SALIDA: ")
+            horaSalida = (input("Hora Salida: "))
+            ticket[2] = "Fuera"
+            splitHoraEntrada = ticket[1].split(":")
+            splitHoraSalida = horaSalida.split(":")
+            diferencia = int(splitHoraSalida[0]) - int(splitHoraEntrada[0])
+            if splitHoraSalida[1] < splitHoraEntrada[1]:
+                diferencia -= 1
+                
+            tarifa = 3.5 * diferencia
+            ticket.append(tarifa)
             
+    if encontrado == False:
+        print("La matricula introducida no existe.")
             
-    
 
 opcion = 0
 
@@ -43,11 +53,9 @@ while opcion != 3:
     if opcion == 1:
         crearTicket()
     elif opcion == 2:
-        print("")
+        cerrarTicket()
     elif opcion == 3:
         print("                 -------- Has salido --------")
         
         
-
-print(coche)
 print(listaCoches)
