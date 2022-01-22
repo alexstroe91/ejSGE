@@ -1,3 +1,5 @@
+from datetime import datetime
+
 listaCoches = []
 coche = []
 
@@ -22,7 +24,16 @@ def crearTicket():
     listaCoches.append(coche)
     
 def cerrarTicket():
-    horaSalida = input("Hora y minuto SALIDA: ")
+    buscarMatricula = input("Matricula a cerrar: ")
+    encontrado = False
+    
+    for ticket in listaCoches:
+        if ticket[0] == buscarMatricula:
+            encontrado = True
+            horaSalida = input("Hora y minuto SALIDA: ")
+            
+            
+    
 
 opcion = 0
 
