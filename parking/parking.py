@@ -27,12 +27,16 @@ def cerrarTicket():
     
     for ticket in listaCoches:
         if ticket[0] == buscarMatricula:
+            
             encontrado = True
             horaSalida = (input("Hora Salida: "))
             ticket[2] = "Fuera"
+            
             splitHoraEntrada = ticket[1].split(":")
             splitHoraSalida = horaSalida.split(":")
+            
             diferencia = int(splitHoraSalida[0]) - int(splitHoraEntrada[0])
+            
             if splitHoraSalida[1] < splitHoraEntrada[1]:
                 diferencia -= 1
                 
