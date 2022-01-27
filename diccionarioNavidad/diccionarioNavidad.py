@@ -1,0 +1,2 @@
+import diccionario as dic
+
