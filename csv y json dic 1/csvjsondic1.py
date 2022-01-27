@@ -1,4 +1,5 @@
 import csv
+import json
 
 
 lista = []
@@ -52,3 +53,6 @@ with open("pizzas.csv", "w") as fich:
     writer.writeheader()
     for i in range(len(lista)):
         writer.writerow(lista[i])
+        
+with open('pizza.json', 'w') as fich:
+    json.dump(lista, fich, indent=4)
