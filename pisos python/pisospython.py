@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import psycopg2
+conn=None
+
 sqlinsert = []
 sqlCreateTable = []
 texto = ""
